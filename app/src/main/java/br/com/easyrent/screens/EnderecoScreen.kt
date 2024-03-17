@@ -49,7 +49,7 @@ fun EnderecoScreen() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(8.dp)
     ) {
         Card(modifier = Modifier.fillMaxWidth()) {
             Column(
@@ -132,7 +132,7 @@ fun EnderecoScreen() {
                         },
                         modifier = Modifier.weight(2f),
                         label = {
-                            Text(text = "O que lembra do nome da rua?")
+                            Text(text = "Qual o nome da rua?")
                         },
                         keyboardOptions = KeyboardOptions(
                             keyboardType = KeyboardType.Text,

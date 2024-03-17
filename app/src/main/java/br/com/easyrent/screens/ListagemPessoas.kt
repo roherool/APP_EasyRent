@@ -17,23 +17,23 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun NovoContratoScreen(navController: NavController, locatario: String?) {
+fun ListagemPessoas(navController: NavController) {
     Box(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF2C4EC7))
         .padding(32.dp)
     ) {
-        Text(text = "CONTRATOS",
+        Text(text = "LISTA DE PESSOAS",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
         Button(
-            onClick = { navController.navigate("home") },
+            onClick = { navController.navigate("newPessoa") },
             colors = ButtonDefaults.buttonColors(Color.White),
             modifier = Modifier.align(Alignment.Center)
         ) {
-            Text(text = "Voltar", fontSize = 20.sp, color = Color.Blue)
+            Text(text = "Incluir Pessoa", fontSize = 20.sp, color = Color.Blue)
         }
     }
 }

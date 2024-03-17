@@ -1,6 +1,5 @@
 package br.com.easyrent.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -25,42 +24,49 @@ import androidx.navigation.NavHostController
 fun HomeScreen(navController: NavHostController) {
     Box(modifier = Modifier
         .fillMaxSize()
-        .background(Color(0xFF2C4EC7))
-        .padding(32.dp)
     ) {
-        Text(text = "PESSOA",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.White
-        )
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.Center)
         ) {
+            Text(text = "HOME",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.DarkGray
+            )
+            Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("perfil/Roberto/59") },
-                colors = ButtonDefaults.buttonColors(Color.White),
-                modifier = Modifier.size(width = 200.dp, height = 48.dp)
+                onClick = { navController.navigate("listPessoas") },
+                colors = ButtonDefaults.buttonColors(Color.LightGray),
+                modifier = Modifier.size(width = 250.dp, height = 48.dp)
             ) {
-                Text(text = "Perfil", fontSize = 20.sp, color = Color.Blue)
+                Text(text = "Pessoas", fontSize = 20.sp, color = Color.Gray)
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("pedidos?cliente=FIAP") },
-                colors = ButtonDefaults.buttonColors(Color.White),
-                modifier = Modifier.size(width = 200.dp, height = 48.dp)
+                onClick = { navController.navigate("listImoveis") },
+                colors = ButtonDefaults.buttonColors(Color.LightGray),
+                modifier = Modifier.size(width = 250.dp, height = 48.dp)
             ) {
-                Text(text = "Pedidos", fontSize = 20.sp, color = Color.Blue)
+                Text(text = "Imóveis", fontSize = 20.sp, color = Color.Gray)
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(
+                onClick = { navController.navigate("listContratos") },
+                colors = ButtonDefaults.buttonColors(Color.LightGray),
+                modifier = Modifier.size(width = 250.dp, height = 48.dp)
+            ) {
+                Text(text = "Contratos", fontSize = 20.sp, color = Color.Gray)
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
                 onClick = { navController.navigate("login") },
-                colors = ButtonDefaults.buttonColors(Color.White),
+                colors = ButtonDefaults.buttonColors(Color.LightGray),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {
-                Text(text = "Sair", fontSize = 20.sp, color = Color.Blue)
+                Text(text = "Sair", fontSize = 20.sp, color = Color.Gray)
             }
         }
     }

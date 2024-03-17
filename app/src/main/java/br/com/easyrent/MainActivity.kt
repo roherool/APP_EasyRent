@@ -3,29 +3,26 @@ package br.com.easyrent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.navigation.NavType
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
-import br.com.easyrent.screens.NovoPessoaScreen
-import br.com.easyrent.screens.NovoContratoScreen
 import br.com.easyrent.screens.HomeScreen
+import br.com.easyrent.screens.ListagemContratos
+import br.com.easyrent.screens.ListagemImoveis
+import br.com.easyrent.screens.ListagemPessoas
 import br.com.easyrent.screens.LoginScreen
+import br.com.easyrent.screens.NewContratoScreen
+import br.com.easyrent.screens.NewImovelScreen
+import br.com.easyrent.screens.NewPessoaScreen
 import br.com.easyrent.ui.theme.EasyRentTheme
-import com.google.accompanist.navigation.animation.composable
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Thread.sleep(3000)
-        installSplashScreen().setKeepOnScreenCondition { true }
         setContent {
             EasyRentTheme {
                 // A surface container using the 'background' color from the theme
@@ -36,35 +33,16 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = "login"
+                        startDestination = "home"
                     ) {
                         composable(route = "login"){ LoginScreen(navController) }
                         composable(route = "home"){ HomeScreen(navController) }
-                        composable(
-                            route = "contratos?locatario={locatario}",
-                            arguments = listOf(navArgument(name = "locatario") {
-                                defaultValue = "Sem locatário"
-                            })
-                        ){
-                            NovoContratoScreen(navController, it.arguments?.getString("locatario"))
-                        }
-                        composable(
-                            route = "pessoa/{nome}/{tipo}",
-                            arguments = listOf(
-                                navArgument("nome") {
-                                    type = NavType.StringType
-                                },
-                                navArgument("tipo") {
-                                    type = NavType.StringType
-                                }
-                            )
-                        ){
-                            val nome: String? =
-                                it.arguments?.getString("nome", "")
-                            val tipo: String? =
-                                it.arguments?.getString("tipo", "")
-                            NovoPessoaScreen(navController, nome!!, tipo!!)
-                        }
+                        composable(route = "newPessoa"){ NewPessoaScreen(navController) }
+                        composable(route = "newImovel"){ NewImovelScreen(navController) }
+                        composable(route = "newContrato"){ NewContratoScreen(navController) }
+                        composable(route = "listPessoas"){ ListagemPessoas(navController) }
+                        composable(route = "listImoveis"){ ListagemImoveis(navController ) }
+                        composable(route = "listContratos"){ ListagemContratos(navController ) }
                     }
                 }
             }

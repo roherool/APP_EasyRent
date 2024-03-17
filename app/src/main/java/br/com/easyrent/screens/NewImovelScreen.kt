@@ -14,16 +14,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun NewImovelScreen(navController: NavHostController) {
     Box(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF2C4EC7))
         .padding(32.dp)
     ) {
-        Text(text = "LOGIN",
+        Text(text = "IMÓVEIS",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
@@ -33,7 +33,7 @@ fun LoginScreen(navController: NavController) {
             colors = ButtonDefaults.buttonColors(Color.White),
             modifier = Modifier.align(Alignment.Center)
         ) {
-            Text(text = "ENTRAR", fontSize = 20.sp, color = Color.Blue)
+            Text(text = "HOME", fontSize = 20.sp, color = Color.Blue)
         }
     }
 }

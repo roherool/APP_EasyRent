@@ -81,8 +81,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-//    // ROOM DEPENDENCIES
+    // ROOM DEPENDENCIES
 //    implementation(libs.androidx.room.runtime)
-//    annotationProcessor(libs.androidx.room.compiler)
+//    implementation(libs.androidx.room.compiler)
 //    kapt(libs.androidx.room.compiler)
 }
