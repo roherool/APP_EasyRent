@@ -13,9 +13,13 @@ data class Pessoa(
 
     val cpf: String = "",
 
-    val tipo: String = "",
+    val tipo: String = TipoPessoa.PERFIL,
 
-    val endereco: Endereco = Endereco(),
+    val telefone: String = "",
+
+    val email: String = "",
+
+    val endereco: String = Endereco(),
 
     val dataCadastro: Date
 )

@@ -1,7 +1,6 @@
 package br.com.easyrent.components
 
 
-import androidx.compose.foundation.background
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -14,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import br.com.easyrent.R
-import br.com.easyrent.ui.theme.Orangish
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,7 +20,7 @@ fun CustomAppBar(
     modifier: Modifier = Modifier,
     currentScreen: String = "",
     showBackButton: Boolean = true,
-    onBackButtonClick: () -> Unit
+    onBackButtonClick: () -> Unit,
 ) {
     TopAppBar(
         title = { Text(currentScreen) },
@@ -37,7 +35,6 @@ fun CustomAppBar(
                     )
                 }
             }
-            modifier.background(color = (Orangish))
         }
     )
 }
