@@ -15,25 +15,25 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import br.com.easyrent.ui.theme.Orangish
 
 @Composable
 fun LoginScreen(navController: NavController) {
     Box(modifier = Modifier
         .fillMaxSize()
-        .background(Color(0xFF2C4EC7))
         .padding(32.dp)
     ) {
-        Text(text = "LOGIN",
+        Text(text = "Login",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.White
+            color = Color.DarkGray
         )
         Button(
             onClick = { navController.navigate("home") },
-            colors = ButtonDefaults.buttonColors(Color.White),
+            colors = ButtonDefaults.buttonColors(Orangish),
             modifier = Modifier.align(Alignment.Center)
         ) {
-            Text(text = "ENTRAR", fontSize = 20.sp, color = Color.Blue)
+            Text(text = "Entrar", fontSize = 20.sp, color = Color.White)
         }
     }
 }

@@ -7,17 +7,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.easyrent.screens.FormContratoScreen
+import br.com.easyrent.screens.FormImovelScreen
+import br.com.easyrent.screens.FormPessoaScreen
 import br.com.easyrent.screens.HomeScreen
-import br.com.easyrent.screens.ListagemContratos
-import br.com.easyrent.screens.ListagemImoveis
-import br.com.easyrent.screens.ListagemPessoas
+import br.com.easyrent.screens.ListContratos
+import br.com.easyrent.screens.ListImoveis
+import br.com.easyrent.screens.ListPessoas
 import br.com.easyrent.screens.LoginScreen
-import br.com.easyrent.screens.NewContratoScreen
-import br.com.easyrent.screens.NewImovelScreen
-import br.com.easyrent.screens.NewPessoaScreen
 import br.com.easyrent.ui.theme.EasyRentTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,12 +37,12 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(route = "login"){ LoginScreen(navController) }
                         composable(route = "home"){ HomeScreen(navController) }
-                        composable(route = "newPessoa"){ NewPessoaScreen(navController) }
-                        composable(route = "newImovel"){ NewImovelScreen(navController) }
-                        composable(route = "newContrato"){ NewContratoScreen(navController) }
-                        composable(route = "listPessoas"){ ListagemPessoas(navController) }
-                        composable(route = "listImoveis"){ ListagemImoveis(navController ) }
-                        composable(route = "listContratos"){ ListagemContratos(navController ) }
+                        composable(route = "newPessoa"){ FormPessoaScreen(navController) }
+                        composable(route = "newImovel"){ FormImovelScreen(navController) }
+                        composable(route = "newContrato"){ FormContratoScreen(navController) }
+                        composable(route = "listPessoas"){ ListPessoas(navController) }
+                        composable(route = "listImoveis"){ ListImoveis(navController ) }
+                        composable(route = "listContratos"){ ListContratos(navController ) }
                     }
                 }
             }
