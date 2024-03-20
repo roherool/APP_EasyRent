@@ -1,7 +1,9 @@
 package br.com.easyrent.model
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class Endereco(
     val cep: String = "",
 

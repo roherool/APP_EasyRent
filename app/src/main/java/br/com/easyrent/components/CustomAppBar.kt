@@ -1,6 +1,7 @@
 package br.com.easyrent.components
 
 
+import androidx.compose.foundation.background
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -24,14 +25,15 @@ fun CustomAppBar(
 ) {
     TopAppBar(
         title = { Text(currentScreen) },
-        modifier = modifier,
+        modifier = modifier
+            .background(colorResource(R.color.stormy_blue)),
         navigationIcon = {
             if (showBackButton) {
                 IconButton(onClick = onBackButtonClick) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         tint = colorResource(R.color.orangish),
-                        contentDescription = stringResource(R.string.back_buttor)
+                        contentDescription = stringResource(R.string.back_buttor),
                     )
                 }
             }

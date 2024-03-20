@@ -27,7 +27,7 @@ fun HomeScreen(navController: NavHostController) {
         .fillMaxSize()
         .padding(32.dp)
     ) {
-        Text(text = "Home",
+        Text(text = "Catálogo de Imóveis",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.DarkGray

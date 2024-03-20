@@ -28,7 +28,7 @@ import br.com.easyrent.model.Pessoa
 import br.com.easyrent.ui.theme.Orangish
 
 @Composable
-fun ListPessoas(navController: NavController) {
+fun ListPessoasScreen(navController: NavController) {
 
     var listaPessoasState by remember {
         mutableStateOf(listOf<Pessoa>())

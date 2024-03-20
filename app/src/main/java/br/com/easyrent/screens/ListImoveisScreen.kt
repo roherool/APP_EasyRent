@@ -20,10 +20,10 @@ import br.com.easyrent.components.CustomAppBar
 import br.com.easyrent.ui.theme.Orangish
 
 @Composable
-fun FormContratoScreen(navController: NavController) {
+fun ListImoveisScreen(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()) {
         CustomAppBar(
-            currentScreen = "Cadastro de Contrato",
+            currentScreen = "Lista de Imóveis",
             showBackButton = true,
             onBackButtonClick = { navController.navigate("home")},
         )
@@ -33,11 +33,11 @@ fun FormContratoScreen(navController: NavController) {
         ) {
             Spacer(modifier = Modifier.height(32.dp))
             Button(
-                onClick = { navController.navigate("home") },
+                onClick = { navController.navigate("newImovel") },
                 colors = ButtonDefaults.buttonColors(Orangish),
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             ) {
-                Text(text = "Home", fontSize = 20.sp, color = Color.White)
+                Text(text = "Incluir Imóvel", fontSize = 20.sp, color = Color.White)
             }
         }
     }

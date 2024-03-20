@@ -2,7 +2,7 @@ package br.com.easyrent.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.Date
+import java.time.LocalDate
 
 @Entity(tableName = "tb_pessoas")
 data class Pessoa(
@@ -13,13 +13,13 @@ data class Pessoa(
 
     val cpf: String = "",
 
-    val tipo: String = TipoPessoa.PERFIL,
+    val tipo: TipoPessoa = TipoPessoa.PERFIL,
 
     val telefone: String = "",
 
     val email: String = "",
 
-    val endereco: String = Endereco(),
+    val endereco: Endereco = Endereco(),
 
-    val dataCadastro: Date
+    val dataCadastro: LocalDate
 )
