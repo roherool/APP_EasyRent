@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -201,8 +202,10 @@ fun ContratoScreen(navController: NavController) {
                     onClick = { navController.navigate("home") },
                     colors = ButtonDefaults.buttonColors(Color.Gray),
                     modifier = Modifier
+                        .height(55.dp)
                         .weight(2f)
-                        .padding(end = 12.dp)
+                        .padding(end = 12.dp),
+                    shape = RoundedCornerShape(4.dp)
                 ) {
                     Text(text = "Desistir", fontSize = 20.sp, color = Color.White)
                 }
@@ -214,7 +217,9 @@ fun ContratoScreen(navController: NavController) {
                     },
                     colors = ButtonDefaults.buttonColors(Orangish),
                     modifier = Modifier
-                        .weight(2f)
+                        .height(55.dp)
+                        .weight(2f),
+                    shape = RoundedCornerShape(4.dp)
                 ) {
                     Text(text = "Assinar", fontSize = 20.sp, color = Color.White)
                 }

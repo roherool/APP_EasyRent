@@ -1,6 +1,7 @@
 package br.com.easyrent
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -11,14 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.easyrent.screens.AuthScreen
 import br.com.easyrent.screens.ContratoScreen
-import br.com.easyrent.screens.ImovelScreen
-import br.com.easyrent.screens.PessoaScreen
 import br.com.easyrent.screens.HomeScreen
+import br.com.easyrent.screens.ImovelScreen
 import br.com.easyrent.screens.ListContratosScreen
 import br.com.easyrent.screens.ListImoveisScreen
 import br.com.easyrent.screens.ListPessoasScreen
-import br.com.easyrent.screens.LoginScreen
+import br.com.easyrent.screens.PessoaScreen
 import br.com.easyrent.ui.theme.EasyRentTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,7 +35,13 @@ class MainActivity : ComponentActivity() {
                             startDestination = "home",
                             Modifier.weight(1f)
                         ) {
-                            composable(route = "login"){ LoginScreen(navController) }
+                            composable(route = "auth"){ AuthScreen(
+                                navController,
+                                onEnterClick = { Log.i(
+                                    "MainActivity",
+                                    "onCreate: $it"
+                                )}
+                            )}
                             composable(route = "home"){ HomeScreen(navController) }
                             composable(route = "newPessoa"){ PessoaScreen(navController) }
                             composable(route = "newImovel"){ ImovelScreen(navController) }

@@ -7,16 +7,19 @@ import androidx.room.RoomDatabase
 import br.com.easyrent.database.dao.ContratoDao
 import br.com.easyrent.database.dao.ImovelDao
 import br.com.easyrent.database.dao.PessoaDao
+import br.com.easyrent.database.dao.UsuarioDao
 import br.com.easyrent.model.Contrato
 import br.com.easyrent.model.Imovel
 import br.com.easyrent.model.Pessoa
+import br.com.easyrent.model.Usuario
 
-@Database(entities = [Contrato::class, Imovel::class, Pessoa::class], version = 1)
+@Database(entities = [Contrato::class, Imovel::class, Pessoa::class, Usuario::class], version = 1)
 abstract class ConexaoDb : RoomDatabase() {
 
     abstract fun contratoDao(): ContratoDao
     abstract fun imovelDao(): ImovelDao
     abstract fun pessoaDao(): PessoaDao
+    abstract fun usuarioDao(): UsuarioDao
 
     companion object {
 

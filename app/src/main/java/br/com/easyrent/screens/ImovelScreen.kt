@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -141,8 +142,6 @@ fun ImovelScreen(navController: NavHostController) {
                         .fillMaxWidth()
                         .weight(2f)
                         .size(width = 12.dp, height = 50.dp),
-
-
                 ) {
                     Icon(
                         imageVector = Icons.Filled.AddCircle,
@@ -173,6 +172,10 @@ fun ImovelScreen(navController: NavHostController) {
                 Button(
                     onClick = { navController.navigate("home") },
                     colors = ButtonDefaults.buttonColors(Orangish),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(55.dp),
+                    shape = RoundedCornerShape(4.dp)
                 ) {
                     Text(text = "Salvar", fontSize = 20.sp, color = Color.White)
                 }
